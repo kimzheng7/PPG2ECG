@@ -123,6 +123,9 @@ def fit_format(data):
 
 
 if __name__ == '__main__':
+    tf.test.is_built_with_cuda()
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    print()
     plt.close('all')
     data = scio.loadmat(os.path.join('data/Records.mat'))
     records = data['records']
